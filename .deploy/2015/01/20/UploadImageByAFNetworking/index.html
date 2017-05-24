@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>UploadImageByAFNetworking | Once</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="准备工作：界面放置UIImageView，设置默认的图片属性，生成相应的输出口，声明图像选取器(UIImagePickerController)属性，然后在viewDidLoad方法中添加如下代码：
+
+给图像视图添加轻拍手势
+
+设置手势属性：一个手指单击一次
+
+给界面图像视图绑定手势
+
+设置界面图像视图能够与用户交互
+
+初始化图像选取控制器
+
+设置图像选取器的委托
+
+
+参考代码：
+1.给图像视图添">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UploadImageByAFNetworking">
+<meta property="og:url" content="http://yoursite.com/2015/01/20/UploadImageByAFNetworking/">
+<meta property="og:site_name" content="Once">
+<meta property="og:description" content="准备工作：界面放置UIImageView，设置默认的图片属性，生成相应的输出口，声明图像选取器(UIImagePickerController)属性，然后在viewDidLoad方法中添加如下代码：
+
+给图像视图添加轻拍手势
+
+设置手势属性：一个手指单击一次
+
+给界面图像视图绑定手势
+
+设置界面图像视图能够与用户交互
+
+初始化图像选取控制器
+
+设置图像选取器的委托
+
+
+参考代码：
+1.给图像视图添">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UploadImageByAFNetworking">
+<meta name="twitter:description" content="准备工作：界面放置UIImageView，设置默认的图片属性，生成相应的输出口，声明图像选取器(UIImagePickerController)属性，然后在viewDidLoad方法中添加如下代码：
+
+给图像视图添加轻拍手势
+
+设置手势属性：一个手指单击一次
+
+给界面图像视图绑定手势
+
+设置界面图像视图能够与用户交互
+
+初始化图像选取控制器
+
+设置图像选取器的委托
+
+
+参考代码：
+1.给图像视图添">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Once" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://raw.githubusercontent.com/once00/once00.github.io/master/img/8552641.jpeg">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Once</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/once00" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/5253699523/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="facebook" target="_blank" href="/#" title="facebook">facebook</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/blog/" style="font-size: NaNpx;">blog</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://raw.githubusercontent.com/once00/once00.github.io/master/img/8552641.jpeg">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">Once</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/once00" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/5253699523/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="facebook" target="_blank" href="/#" title="facebook">facebook</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-UploadImageByAFNetworking" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/01/20/UploadImageByAFNetworking/" class="article-date">
+  	<time datetime="2015-01-20T09:08:16.000Z" itemprop="datePublished">Jan 20 2015</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      UploadImageByAFNetworking
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>准备工作：界面放置UIImageView，设置默认的图片属性，生成相应的输出口，声明图像选取器(UIImagePickerController)属性，然后在viewDidLoad方法中添加如下代码：</p>
+<ol>
+<li><p>给图像视图添加轻拍手势</p>
+</li>
+<li><p>设置手势属性：一个手指单击一次</p>
+</li>
+<li><p>给界面图像视图绑定手势</p>
+</li>
+<li><p>设置界面图像视图能够与用户交互</p>
+</li>
+<li><p>初始化图像选取控制器</p>
+</li>
+<li><p>设置图像选取器的委托</p>
+</li>
+</ol>
+<p><strong>参考代码：</strong></p>
+<p>1.给图像视图添加轻拍手势</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="constant">UITapGestureRecognizer</span> *tap = [[<span class="constant">UITapGestureRecognizer</span> alloc]<span class="symbol">initWithTarget:</span><span class="keyword">self</span> <span class="symbol">action:</span><span class="variable">@selector</span>(<span class="symbol">tapImage:</span>)];</div></pre></td></tr></table></figure>
+
+<p>2.设置手势属性：一个手指单击一次</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tap.<span class="variable">numberOfTapsRequired =</span> <span class="number">1</span>;</div><div class="line">tap.<span class="variable">numberOfTouchesRequired =</span> <span class="number">1</span>;</div></pre></td></tr></table></figure>
+
+<p>3.给界面图像视图绑定手势</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">[self.imageView addGestureRecognizer:tap]</span><span class="comment">;</span></div></pre></td></tr></table></figure>
+
+<p>4.设置界面图像视图能够与用户交互</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span><span class="variable">.imageView</span><span class="variable">.userInteractionEnabled</span> = <span class="literal">YES</span>;</div></pre></td></tr></table></figure>
+
+<p>5.初始化图像选取控制器</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.imagePicker = [<span class="type">UIImagePickerController</span> <span class="keyword">new</span>];</div></pre></td></tr></table></figure>
+
+<p>6.设置图像选取器的委托</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.imagePicker.<span class="keyword">delegate</span> = <span class="keyword">self</span>;</div></pre></td></tr></table></figure>
+
+<p><strong>完成以下方法：</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">pragma</span> mark 单击界面图像视图调用的方法</span></div><div class="line">- (<span class="keyword">void</span>)tapImage:(UIGestureRecognizer *)recognizer {</div><div class="line">    <span class="comment">// 打开图片库选取图片</span></div><div class="line">    </div><div class="line">}</div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">pragma</span> mark 图像选取控制器委托方法</span></div><div class="line">- (<span class="keyword">void</span>)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {</div><div class="line">	<span class="comment">// 从info字典参数中获取选中的图片（通过UIImagePickerControllerOriginalImage键获取）</span></div><div class="line">    <span class="comment">// 设置界面imageView的image属性为选中的图片</span></div><div class="line">    <span class="comment">// 关闭图片库</span></div><div class="line"></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p><strong>参考代码：</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#pragma mark 单击界面图像视图调用的方法</span></div><div class="line">- (<span class="keyword">void</span>)tapImage:(UIGestureRecognizer *)recognizer {</div><div class="line">    <span class="comment">// 打开图片库选取图片</span></div><div class="line">    [<span class="keyword">self</span> presentViewController:<span class="keyword">self</span><span class="variable">.imagePickerController</span> animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</div><div class="line">}</div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#pragma mark 图像选取控制器委托方法</span></div><div class="line">- (<span class="keyword">void</span>)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(<span class="built_in">NSDictionary</span> *)info {</div><div class="line">    <span class="comment">// 从info字典参数中获取选中的图片（通过UIImagePickerControllerOriginalImage键获取）</span></div><div class="line">    <span class="built_in">UIImage</span> * image=info[UIImagePickerControllerOriginalImage];</div><div class="line">    <span class="comment">// 设置界面imageView的image属性为选中的图片</span></div><div class="line">    <span class="keyword">self</span><span class="variable">.imageView</span><span class="variable">.image</span>=image;</div><div class="line">    <span class="comment">// 关闭图片库</span></div><div class="line">    [<span class="keyword">self</span> dismissViewControllerAnimated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</div><div class="line"></div><div class="line">    }</div></pre></td></tr></table></figure>
+
+<p><strong>完成上传图片，使用AFNetworking</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">- (IBAction)uploadImage:(id)sender {</div><div class="line"></div><div class="line">    <span class="comment">// 把图片对象转换成data对象（UIImagePNGRepresentation方法）</span></div><div class="line">    </div><div class="line">    <span class="comment">// 保存图片到沙盒中（获取文件完整目录，使用data对象的writeToFile:atomically:	方法写入）</span></div><div class="line"></div><div class="line">    <span class="comment">// 使用AFNetworking上传图片</span></div><div class="line">    <span class="comment">// 创建http请求操作管理器（AFHTTPRequestOperationManager类的对象）</span></div><div class="line">    </div><div class="line">    <span class="comment">// 设置接收响应类型</span></div><div class="line">    <span class="comment">//manager.responseSerializer.acceptableContentTypes = 	[NSSetsetWithObjects:@"text/html", nil];</span></div><div class="line">    <span class="comment">// 使用AFHTTPRequestOperationManager类的对象POST:parameters: 	constructingBodyWithBlock: success: failure:方法创建http请求操作对象	(AFHTTPRequestOperation)</span></div><div class="line">    </div><div class="line">    constructingBodyWithBlock代码块参数中执行以下代码：</div><div class="line">        <span class="comment">// 文件路径方式上传图片</span></div><div class="line">		<span class="comment">// 通过沙盒中文件完整路径创建NSURL对象（NSURL 的类方法fileURLWithPath:）</span></div><div class="line"></div><div class="line">        <span class="comment">// 调用代码块的formData参数的appendPartWithFileURL: name:error:方法		上传图片（注意此处name参数是服务端上传图片时接口中的参数名称）</span></div><div class="line">        </div><div class="line">        <span class="comment">// data方式上传图片</span></div><div class="line">        /*[formData appendPartWithFileData:imageData name:@<span class="string">"fileName"</span> 		fileName:@<span class="string">"upload.png"</span> mimeType:@<span class="string">"image/png"</span>];*/</div><div class="line"></div><div class="line">    	<span class="comment">//最后http请求操作对象发送请求</span></div></pre></td></tr></table></figure>
+
+<p><strong>参考代码：</strong></p>
+<p><strong>//上传图片，使用AFNetworking</strong></p>
+<p><strong>- (IBAction)uploadImage:(id)sender {</strong></p>
+<p>1.把图片对象转换成data对象(UIImagePNGRepresentation方法）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">NSData *imageData </span>=<span class="string"> UIImagePNGRepresentation(self.imageView.image);</span></div></pre></td></tr></table></figure>
+
+<p>2.保存图片到沙盒中</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *filePath = [<span class="keyword">self</span> getFilePath:<span class="string">@"upload.png"</span>];</div><div class="line">[imageData writeToFile:filePath atomically:<span class="literal">YES</span>];</div></pre></td></tr></table></figure>
+
+<p>3.使用AFNetworking上传图片</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 创建http请求操作管理器（AFHTTPRequestOperationManager类的对象）</span></div><div class="line"></div><div class="line">AFHTTPRequestOperationManager * manage=[AFHTTPRequestOperationManager <span class="keyword">new</span>];</div></pre></td></tr></table></figure>
+
+<p>4.创建http请求操作管理器(AFHTTPRequestOperationManager类的对象）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">AFHTTPRequestOperationManager *manager </span>=<span class="string"> [AFHTTPRequestOperationManager new];</span></div></pre></td></tr></table></figure>
+
+<p>5.设置接收响应类型</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">manager<span class="variable">.responseSerializer</span><span class="variable">.acceptableContentTypes</span> = [<span class="built_in">NSSet</span> setWithObjects:<span class="string">@"text/html"</span>, <span class="literal">nil</span>];</div></pre></td></tr></table></figure>
+
+<p>6.创建http请求操作对象</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">AFHTTPRequestOperation <span class="keyword">*</span>op = [manager POST:kUploadFileURL parameters:nil constructingBodyWithBlock:^(id<span class="variable">&lt;AFMultipartFormData&gt;</span> formData) {</div><div class="line"><span class="keyword">*</span><span class="keyword">*</span>菊花<span class="keyword">*</span><span class="keyword">*</span></div><div class="line">[MMProgressHUD setPresentationStyle:MMProgressHUDPresentationStyleFade];</div><div class="line">[MMProgressHUD showWithTitle:<span class="comment">@"上传图片" status:@"上传中。。。"];</span></div></pre></td></tr></table></figure>
+
+<p>7.文件路径方式上传图片</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> fileURLWithPath:filePath];</div><div class="line">[formData appendPartWithFileURL:url name:<span class="string">@"fileName"</span> error:<span class="literal">nil</span>];</div></pre></td></tr></table></figure>
+
+<p>8.data方式上传图片</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[formData appendPartWithFileData:imageData name:<span class="string">@"fileName"</span> fileName:<span class="string">@"upload.png"</span> mimeType:<span class="string">@"image/png"</span>];*/</div><div class="line">    } success:^(AFHTTPRequestOperation *operation, <span class="keyword">id</span> responseObject) {</div><div class="line">        [MMProgressHUD dismissWithSuccess:<span class="string">@"上传成功！"</span>];</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"responseObject:%@"</span>,responseObject);</div><div class="line">    } failure:^(AFHTTPRequestOperation *operation, <span class="built_in">NSError</span> *error) {</div><div class="line">        [MMProgressHUD dismissWithError:<span class="string">@"上传失败！"</span>];</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"error:%@"</span>,[error localizedDescription]);</div><div class="line">    }];</div></pre></td></tr></table></figure>
+
+<p>8.http请求操作对象发送请求</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[op <span class="operator"><span class="keyword">start</span>];</span></div></pre></td></tr></table></figure>
+
+<p>}</p>
+<p>```</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/21/CocoaPods安装和使用教程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          CocoaPods安装和使用教程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/20/Xcode6-使用MJRefresh，Too-many-arguments-to-function-call-expected-0-have/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Xcode6 使用MJRefresh，Too many arguments to function call, expected 0, have *</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="UploadImageByAFNetworking" data-title="UploadImageByAFNetworking" data-url="http://yoursite.com/2015/01/20/UploadImageByAFNetworking/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Once
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/once00" target="_blank">Once</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
